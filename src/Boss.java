@@ -11,6 +11,13 @@ public class Boss {
         foods.add(food);
     }
 
+    public Food getFood(String name){
+        int index= findFood(name);
+        if (index>=0)
+            return foods.get(index);
+        return null;
+    }
+
     public boolean removeFood(String name){
         int index =findFood(name);
         if (index>=0){

@@ -45,10 +45,7 @@ public class Food {
     }
 
     public void addIngredient(List<String> ingredient) {
-        for (String ing: ingredient
-             ) {
-            this.ingredient.add(ing);
-        }
+        this.ingredient.addAll(ingredient);
     }
 
     public boolean removeIngredient(String ingredient) {
@@ -68,9 +65,10 @@ public class Food {
     }
 
     public void removeAllIngredient(){
-        for (int i=0; i<ingredient.size(); i++){
-            ingredient.remove(i);
-        }
+        if (ingredient.size()>0)
+            for (int i=0; i<ingredient.size(); i++)
+                ingredient.remove(i);
+
     }
 
     public String getSize() {

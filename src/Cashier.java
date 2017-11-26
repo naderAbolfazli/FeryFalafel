@@ -14,7 +14,7 @@ public class Cashier {
         }
         System.out.println("Foods Sum Price : "+sumPrice);
         System.out.print("Final Cost(foods with service) : ");
-        System.out.println(FoodOut?sumPrice:sumPrice*.2);
+        System.out.println(FoodOut?sumPrice:sumPrice*.2+ sumPrice);
 
     }
 }
