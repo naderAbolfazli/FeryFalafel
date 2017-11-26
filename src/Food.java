@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -43,6 +44,35 @@ public class Food {
         this.ingredient.add(ingredient);
     }
 
+    public void addIngredient(List<String> ingredient) {
+        for (String ing: ingredient
+             ) {
+            this.ingredient.add(ing);
+        }
+    }
+
+    public boolean removeIngredient(String ingredient) {
+        int index = findIng(ingredient);
+        if (index>=0){
+            this.ingredient.remove(index);
+        }
+        return false;
+    }
+
+    private int findIng(String ingredient) {
+        for (int i=0; i<this.ingredient.size(); i++)
+            if (this.ingredient.get(i).equals(ingredient))
+                return i;
+
+        return -1;
+    }
+
+    public void removeAllIngredient(){
+        for (int i=0; i<ingredient.size(); i++){
+            ingredient.remove(i);
+        }
+    }
+
     public String getSize() {
         return size;
     }
@@ -70,4 +100,5 @@ public class Food {
 
         return name.equals(food.name);
     }
+
 }
